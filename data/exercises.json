@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Barbell Squat",
+    "equipment": ["Barbell", "Squat Rack"],
+    "difficulty": "Intermediate",
+    "musclesWorked": ["Quadriceps", "Glutes", "Hamstrings", "Core"],
+    "mainBodyComponent": "Legs"
+  },
+  {
+    "name": "Push-up",
+    "equipment": ["None"],
+    "difficulty": "Beginner",
+    "musclesWorked": ["Pectoralis Major", "Triceps", "Anterior Deltoid"],
+    "mainBodyComponent": "Chest"
+  },
+  {
+    "name": "Pull-up",
+    "equipment": ["Pull-up Bar"],
+    "difficulty": "Intermediate",
+    "musclesWorked": ["Latissimus Dorsi", "Biceps", "Forearms"],
+    "mainBodyComponent": "Back"
+  },
+  {
+    "name": "Overhead Press (Dumbbell)",
+    "equipment": ["Dumbbells"],
+    "difficulty": "Intermediate",
+    "musclesWorked": ["Anterior Deltoid", "Lateral Deltoid", "Triceps"],
+    "mainBodyComponent": "Shoulders"
+  },
+  {
+    "name": "Plank",
+    "equipment": ["None"],
+    "difficulty": "Beginner",
+    "musclesWorked": ["Rectus Abdominis", "Obliques", "Transverse Abdominis"],
+    "mainBodyComponent": "Core"
+  },
+  {
+    "name": "Bicep Curl (Dumbbell)",
+    "equipment": ["Dumbbells"],
+    "difficulty": "Beginner",
+    "musclesWorked": ["Biceps Brachii", "Brachialis"],
+    "mainBodyComponent": "Arms"
+  },
+  {
+    "name": "Deadlift",
+    "equipment": ["Barbell", "Weight Plates"],
+    "difficulty": "Advanced",
+    "musclesWorked": [
+      "Hamstrings",
+      "Glutes",
+      "Lower Back",
+      "Trapezius",
+      "Forearms"
+    ],
+    "mainBodyComponent": "Full Body"
+  }
+]
