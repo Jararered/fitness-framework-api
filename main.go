@@ -18,7 +18,7 @@ func main() {
 
 	apiInfo, err := version.LoadVersionInfo()
 	if err != nil {
-		log.Fatalf("Failed to load version information: %v", err) // Fatal if version file is missing/corrupt
+		log.Fatalf("Failed to load version information: %v", err)
 	}
 
 	// 3. Create an instance of your API handlers, passing dependencies
