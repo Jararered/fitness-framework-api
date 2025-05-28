@@ -1,57 +1,352 @@
 [
   {
+    "name": "Barbell Bent-Over Row",
+    "equipment": ["Barbell"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Barbell Deadlift",
+    "equipment": ["Barbell"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Dumbbell Bent-Over Row",
+    "equipment": ["Dumbbells"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Dumbbell Single-Arm Row",
+    "equipment": ["Dumbbells"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Lat Pulldown",
+    "equipment": ["Lat Pulldown Machine"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Lat Pulldown Behind-the-Head",
+    "equipment": ["Lat Pulldown Machine"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Lat Pulldown Narrow-Grip",
+    "equipment": ["Lat Pulldown Machine"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Lat Pulldown Reverse-Grip",
+    "equipment": ["Lat Pulldown Machine"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Lat Pulldown Single-Arm",
+    "equipment": ["Lat Pulldown Machine"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Lat Pulldown Wide-Grip",
+    "equipment": ["Lat Pulldown Machine"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Smith Machine Bent-Over Row",
+    "equipment": ["Smith Machine"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Pullup",
+    "equipment": ["Pullup Bar"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Cable Lat Pulldown",
+    "equipment": ["Cable Machine"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Seated Cable Row",
+    "equipment": ["Cable Machine"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Standing Cable Pullover",
+    "equipment": ["Cable Machine"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Cable Face Pull",
+    "equipment": ["Cable Machine"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Straight Arm Cable Pulldown",
+    "equipment": ["Cable Machine"],
+    "muscles": ["Back"]
+  },
+  {
+    "name": "Barbell Curl",
+    "equipment": ["Barbell"],
+    "muscles": ["Biceps"]
+  },
+  {
+    "name": "Dumbbell Bicep Curl",
+    "equipment": ["Dumbbells"],
+    "muscles": ["Biceps"]
+  },
+  {
+    "name": "Dumbbell Hammer Curl",
+    "equipment": ["Dumbbells"],
+    "muscles": ["Biceps"]
+  },
+  {
+    "name": "EZ Bar Close-Grip Curl",
+    "equipment": ["EZ Bar"],
+    "muscles": ["Biceps"]
+  },
+  {
+    "name": "EZ Bar Curl",
+    "equipment": ["EZ Bar"],
+    "muscles": ["Biceps"]
+  },
+  {
+    "name": "EZ Bar Wide-Grip Curl",
+    "equipment": ["EZ Bar"],
+    "muscles": ["Biceps"]
+  },
+  {
+    "name": "Barbell Bench Press",
+    "equipment": ["Barbell", "Flat Bench"],
+    "muscles": ["Chest"]
+  },
+  {
+    "name": "Barbell Decline Bench Press",
+    "equipment": ["Barbell", "Decline Bench"],
+    "muscles": ["Chest"]
+  },
+  {
+    "name": "Barbell Incline Bench Press",
+    "equipment": ["Barbell", "Incline Bench"],
+    "muscles": ["Chest"]
+  },
+  {
+    "name": "Machine Chest Press",
+    "equipment": ["Chest Press Machine"],
+    "muscles": ["Chest"]
+  },
+  {
+    "name": "Machine Incline Chest Press",
+    "equipment": ["Chest Press Machine"],
+    "muscles": ["Chest"]
+  },
+  {
+    "name": "Smith Machine Bench Press",
+    "equipment": ["Smith Machine", "Flat Bench"],
+    "muscles": ["Chest"]
+  },
+  {
+    "name": "Smith Machine Close-Grip Bench Press",
+    "equipment": ["Smith Machine", "Flat Bench"],
+    "muscles": ["Chest"]
+  },
+  {
+    "name": "Smith Machine Incline Bench Press",
+    "equipment": ["Smith Machine", "Incline Bench"],
+    "muscles": ["Chest"]
+  },
+  {
+    "name": "Barbell Front Squat",
+    "equipment": ["Barbell"],
+    "muscles": ["Legs"]
+  },
+  {
+    "name": "Barbell Lunge",
+    "equipment": ["Barbell"],
+    "muscles": ["Legs"]
+  },
+  {
+    "name": "Barbell Romanian Deadlift",
+    "equipment": ["Barbell"],
+    "muscles": ["Legs"]
+  },
+  {
     "name": "Barbell Squat",
-    "equipment": ["Barbell", "Squat Rack"],
-    "difficulty": "Intermediate",
-    "musclesWorked": ["Quadriceps", "Glutes", "Hamstrings", "Core"],
-    "mainBodyComponent": "Legs"
+    "equipment": ["Barbell"],
+    "muscles": ["Legs"]
   },
   {
-    "name": "Push-up",
-    "equipment": ["None"],
-    "difficulty": "Beginner",
-    "musclesWorked": ["Pectoralis Major", "Triceps", "Anterior Deltoid"],
-    "mainBodyComponent": "Chest"
+    "name": "Barbell Sumo Deadlift",
+    "equipment": ["Barbell"],
+    "muscles": ["Legs"]
   },
   {
-    "name": "Pull-up",
-    "equipment": ["Pull-up Bar"],
-    "difficulty": "Intermediate",
-    "musclesWorked": ["Latissimus Dorsi", "Biceps", "Forearms"],
-    "mainBodyComponent": "Back"
-  },
-  {
-    "name": "Overhead Press (Dumbbell)",
+    "name": "Dumbbell Lunges",
     "equipment": ["Dumbbells"],
-    "difficulty": "Intermediate",
-    "musclesWorked": ["Anterior Deltoid", "Lateral Deltoid", "Triceps"],
-    "mainBodyComponent": "Shoulders"
+    "muscles": ["Legs"]
   },
   {
-    "name": "Plank",
-    "equipment": ["None"],
-    "difficulty": "Beginner",
-    "musclesWorked": ["Rectus Abdominis", "Obliques", "Transverse Abdominis"],
-    "mainBodyComponent": "Core"
+    "name": "Leg Curl",
+    "equipment": ["Leg Curl Machine"],
+    "muscles": ["Legs"]
   },
   {
-    "name": "Bicep Curl (Dumbbell)",
+    "name": "Leg Curl + Isometric Hold",
+    "equipment": ["Leg Curl Machine"],
+    "muscles": ["Legs"]
+  },
+  {
+    "name": "Leg Extension",
+    "equipment": ["Leg Extension Machine"],
+    "muscles": ["Legs"]
+  },
+  {
+    "name": "Leg Extension + Isometric Hold",
+    "equipment": ["Leg Extension Machine"],
+    "muscles": ["Legs"]
+  },
+  {
+    "name": "Leg Press",
+    "equipment": ["Leg Press Machine"],
+    "muscles": ["Legs"]
+  },
+  {
+    "name": "Smith Machine Lunges",
+    "equipment": ["Smith Machine"],
+    "muscles": ["Legs"]
+  },
+  {
+    "name": "Smith Machine Squat",
+    "equipment": ["Smith Machine"],
+    "muscles": ["Legs"]
+  },
+  {
+    "name": "Barbell Overhead Press",
+    "equipment": ["Barbell"],
+    "muscles": ["Shoulders"]
+  },
+  {
+    "name": "Dumbbell Front Raise",
     "equipment": ["Dumbbells"],
-    "difficulty": "Beginner",
-    "musclesWorked": ["Biceps Brachii", "Brachialis"],
-    "mainBodyComponent": "Arms"
+    "muscles": ["Shoulders"]
   },
   {
-    "name": "Deadlift",
-    "equipment": ["Barbell", "Weight Plates"],
-    "difficulty": "Advanced",
-    "musclesWorked": [
-      "Hamstrings",
-      "Glutes",
-      "Lower Back",
-      "Trapezius",
-      "Forearms"
-    ],
-    "mainBodyComponent": "Full Body"
+    "name": "Dumbbell Lateral Raise",
+    "equipment": ["Dumbbells"],
+    "muscles": ["Shoulders"]
+  },
+  {
+    "name": "Dumbbell Shoulder Press",
+    "equipment": ["Dumbbells"],
+    "muscles": ["Shoulders"]
+  },
+  {
+    "name": "Dumbbell Shrugs",
+    "equipment": ["Dumbbells"],
+    "muscles": ["Shoulders"]
+  },
+  {
+    "name": "Dumbbell Upright Row",
+    "equipment": ["Dumbbells"],
+    "muscles": ["Shoulders"]
+  },
+  {
+    "name": "Machine Shoulder Press",
+    "equipment": ["Chest Press Machine"],
+    "muscles": ["Shoulders"]
+  },
+  {
+    "name": "Smith Machine Shoulder Press",
+    "equipment": ["Smith Machine"],
+    "muscles": ["Shoulders"]
+  },
+  {
+    "name": "Smith Machine Shrugs",
+    "equipment": ["Smith Machine"],
+    "muscles": ["Shoulders"]
+  },
+  {
+    "name": "Dumbell Seated Military Press",
+    "equipment": ["Dumbbells", "Flat Bench"],
+    "muscles": ["Shoulders"]
+  },
+  {
+    "name": "Dumbbell Standing Military Press",
+    "equipment": ["Dumbbells"],
+    "muscles": ["Shoulders"]
+  },
+  {
+    "name": "Dumbbell Seated Arnold Press",
+    "equipment": ["Dumbbells", "Flat Bench"],
+    "muscles": ["Shoulders"]
+  },
+  {
+    "name": "Dumbbell Seated Reverse Arnold Press",
+    "equipment": ["Dumbbells", "Flat Bench"],
+    "muscles": ["Shoulders"]
+  },
+  {
+    "name": "Dumbbell Seated Arnold Rotations",
+    "equipment": ["Dumbbells", "Flat Bench"],
+    "muscles": ["Shoulders"]
+  },
+  {
+    "name": "Dumbbell Hammer Shrug",
+    "equipment": ["Dumbbells"],
+    "muscles": ["Shoulders"]
+  },
+  {
+    "name": "Dumbbell Skull Crushers",
+    "equipment": ["Dumbbells"],
+    "muscles": ["Triceps"]
+  },
+  {
+    "name": "Dumbbell Tricep Extension",
+    "equipment": ["Dumbbells"],
+    "muscles": ["Triceps"]
+  },
+  {
+    "name": "EZ Bar Skull Crusher",
+    "equipment": ["EZ Bar", "Flat Bench"],
+    "muscles": ["Triceps"]
+  },
+  {
+    "name": "Rope Pulldown",
+    "equipment": ["Cable Machine"],
+    "muscles": ["Triceps"]
+  },
+  {
+    "name": "Dumbbell Side Oblique Crunch",
+    "equipment": ["Dumbbells"],
+    "muscles": ["Obliques"]
+  },
+  {
+    "name": "Cable Straight Arm Oblique Twist",
+    "equipment": ["Cable Machine"],
+    "muscles": ["Obliques"]
+  },
+  {
+    "name": "Cable Bent Over Oblique Dig",
+    "equipment": ["Cable Machine"],
+    "muscles": ["Obliques"]
+  },
+  {
+    "name": "Rope Crunch",
+    "equipment": ["Cable Machine"],
+    "muscles": ["Abs"]
+  },
+  {
+    "name": "Hanging Leg Raise",
+    "equipment": ["Pullup Bar"],
+    "muscles": ["Abs"]
+  },
+  {
+    "name": "Hanging Knee Raise",
+    "equipment": ["Pullup Bar"],
+    "muscles": ["Abs"]
+  },
+  {
+    "name": "Weighted Hanging Knee Raise",
+    "equipment": ["Pullup Bar"],
+    "muscles": ["Abs"]
   }
 ]
