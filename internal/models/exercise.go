@@ -6,8 +6,8 @@ package models
 type Exercise struct {
 	ID        string   `json:"id"`
 	Name      string   `json:"name"`
-	Equipment []string `json:"equipment"` // Will be populated from the junction table
-	Muscles   []string `json:"muscles"`   // Will be populated from the junction table
+	Equipment []string `json:"equipment"`
+	Muscles   []string `json:"muscles"`
 
 	// Temporary field for unmarshaling the initial JSON input only
 	// Will not be persisted directly, but used to populate junction tables.
