@@ -11,6 +11,10 @@ import (
 	"fitness-framework-api/internal/models"
 )
 
+const (
+	allowedOrigin = "http://ff.jarare.red"
+)
+
 // API holds dependencies for handlers, e.g., database connection and version info
 type API struct {
 	DB      *sql.DB
@@ -24,7 +28,7 @@ func NewAPI(db *sql.DB, apiInfo *models.ApiInfo) *API {
 
 func (api *API) GetExercisesHandler(w http.ResponseWriter, r *http.Request) {
 	// Set CORS headers
-	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", allowedOrigin)
 	w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
@@ -75,7 +79,7 @@ func containsAnyCaseInsensitive(haystack []string, needles []string) bool {
 
 func (api *API) GetEquipmentOptionsHandler(w http.ResponseWriter, r *http.Request) {
 	// Set CORS headers
-	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", allowedOrigin)
 	w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
@@ -97,7 +101,7 @@ func (api *API) GetEquipmentOptionsHandler(w http.ResponseWriter, r *http.Reques
 
 func (api *API) GetMusclesOptionsHandler(w http.ResponseWriter, r *http.Request) {
 	// Set CORS headers
-	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", allowedOrigin)
 	w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
@@ -119,7 +123,7 @@ func (api *API) GetMusclesOptionsHandler(w http.ResponseWriter, r *http.Request)
 
 func (api *API) GetVersionHandler(w http.ResponseWriter, r *http.Request) {
 	// Set CORS headers
-	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", allowedOrigin)
 	w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
