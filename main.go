@@ -9,6 +9,10 @@ import (
 	"fitness-framework-api/internal/version"
 )
 
+const (
+	port = ":9001"
+)
+
 func main() {
 	db, err := database.InitDB()
 	if err != nil {
@@ -30,8 +34,8 @@ func main() {
 	http.HandleFunc("/api/equipment-options", apiHandlers.GetEquipmentOptionsHandler)
 	http.HandleFunc("/api/muscles-options", apiHandlers.GetMusclesOptionsHandler)
 
-	log.Println("Server starting on :8080")
-	err = http.ListenAndServe(":8080", nil)
+	log.Println("Server starting on ", port)
+	err = http.ListenAndServe(port, nil)
 	if err != nil {
 		log.Fatalf("Server failed to start: %v", err)
 	}
