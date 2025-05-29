@@ -1,34 +1,32 @@
 package handlers
 
 import (
-	"database/sql"
 	"encoding/json"
 	"log"
 	"net/http"
 	"strings"
 
-	"fitness-framework-api/internal/database"
 	"fitness-framework-api/internal/models"
-)
+	"fitness-framework-api/internal/mongodb" // UPDATED: Import mongodb package
 
-const (
-	allowedOrigin = "http://ff.jarare.red"
+	"go.mongodb.org/mongo-driver/mongo" // NEW: Import mongo driver
 )
 
 // API holds dependencies for handlers, e.g., database connection and version info
 type API struct {
-	DB      *sql.DB
-	ApiInfo *models.ApiInfo
+	DB          *mongo.Database // UPDATED: Now holds *mongo.Database
+	VersionInfo *models.ApiInfo // Assuming you're still using models.ApiInfo from the previous step
 }
 
 // NewAPI creates a new API instance with the given database connection and version info.
-func NewAPI(db *sql.DB, apiInfo *models.ApiInfo) *API {
-	return &API{DB: db, ApiInfo: apiInfo}
+func NewAPI(db *mongo.Database, versionInfo *models.ApiInfo) *API { // UPDATED: Parameter type
+	return &API{DB: db, VersionInfo: versionInfo}
 }
 
+// GetExercisesHandler (Logic remains the same, but calls mongodb.GetExercises)
 func (api *API) GetExercisesHandler(w http.ResponseWriter, r *http.Request) {
 	// Set CORS headers
-	w.Header().Set("Access-Control-Allow-Origin", allowedOrigin)
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
@@ -41,9 +39,9 @@ func (api *API) GetExercisesHandler(w http.ResponseWriter, r *http.Request) {
 	equipmentFilters := r.URL.Query()["equipment"]
 	musclesFilters := r.URL.Query()["muscles"]
 
-	allExercises, err := database.GetExercises(api.DB)
+	allExercises, err := mongodb.GetExercises(api.DB) // UPDATED: Call mongodb package
 	if err != nil {
-		log.Printf("Error getting all exercises: %v", err)
+		log.Printf("Error getting all exercises from MongoDB: %v", err)
 		http.Error(w, "Failed to fetch exercises: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
@@ -63,6 +61,7 @@ func (api *API) GetExercisesHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(filteredExercises)
 }
 
+// containsAnyCaseInsensitive (no changes, still useful for in-memory filtering)
 func containsAnyCaseInsensitive(haystack []string, needles []string) bool {
 	if len(needles) == 0 {
 		return true
@@ -77,9 +76,10 @@ func containsAnyCaseInsensitive(haystack []string, needles []string) bool {
 	return false
 }
 
+// GetEquipmentOptionsHandler (calls mongodb.GetUniqueEquipment)
 func (api *API) GetEquipmentOptionsHandler(w http.ResponseWriter, r *http.Request) {
 	// Set CORS headers
-	w.Header().Set("Access-Control-Allow-Origin", allowedOrigin)
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
@@ -88,9 +88,9 @@ func (api *API) GetEquipmentOptionsHandler(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
-	equipment, err := database.GetUniqueEquipment(api.DB)
+	equipment, err := mongodb.GetUniqueEquipment(api.DB) // UPDATED: Call mongodb package
 	if err != nil {
-		log.Printf("Error getting unique equipment: %v", err)
+		log.Printf("Error getting unique equipment from MongoDB: %v", err)
 		http.Error(w, "Failed to fetch equipment options: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
@@ -99,9 +99,10 @@ func (api *API) GetEquipmentOptionsHandler(w http.ResponseWriter, r *http.Reques
 	json.NewEncoder(w).Encode(equipment)
 }
 
+// GetMusclesOptionsHandler (calls mongodb.GetUniqueMuscles)
 func (api *API) GetMusclesOptionsHandler(w http.ResponseWriter, r *http.Request) {
 	// Set CORS headers
-	w.Header().Set("Access-Control-Allow-Origin", allowedOrigin)
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
@@ -110,9 +111,9 @@ func (api *API) GetMusclesOptionsHandler(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
-	muscles, err := database.GetUniqueMuscles(api.DB)
+	muscles, err := mongodb.GetUniqueMuscles(api.DB) // UPDATED: Call mongodb package
 	if err != nil {
-		log.Printf("Error getting unique muscles: %v", err)
+		log.Printf("Error getting unique muscles from MongoDB: %v", err)
 		http.Error(w, "Failed to fetch muscle options: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
@@ -121,9 +122,11 @@ func (api *API) GetMusclesOptionsHandler(w http.ResponseWriter, r *http.Request)
 	json.NewEncoder(w).Encode(muscles)
 }
 
+// GetVersionHandler (no changes)
 func (api *API) GetVersionHandler(w http.ResponseWriter, r *http.Request) {
+	// ... (content remains the same as your current GetVersionHandler)
 	// Set CORS headers
-	w.Header().Set("Access-Control-Allow-Origin", allowedOrigin)
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
@@ -132,12 +135,12 @@ func (api *API) GetVersionHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if api.ApiInfo == nil {
+	if api.VersionInfo == nil {
 		log.Println("Version information is nil, returning internal server error.")
 		http.Error(w, "Version information not available", http.StatusInternalServerError)
 		return
 	}
 
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(api.ApiInfo)
+	json.NewEncoder(w).Encode(api.VersionInfo)
 }
