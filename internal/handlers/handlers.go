@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
-	"log"
+	"log/slog"
 	"net/http"
 	"strings"
 
@@ -41,7 +41,7 @@ func (api *API) GetExercisesHandler(w http.ResponseWriter, r *http.Request) {
 
 	allExercises, err := mongodb.GetExercises(api.DB) // UPDATED: Call mongodb package
 	if err != nil {
-		log.Printf("Error getting all exercises from MongoDB: %v", err)
+		slog.Error("Error getting all exercises from MongoDB", "error", err)
 		http.Error(w, "Failed to fetch exercises: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
@@ -90,7 +90,7 @@ func (api *API) GetEquipmentOptionsHandler(w http.ResponseWriter, r *http.Reques
 
 	equipment, err := mongodb.GetUniqueEquipment(api.DB) // UPDATED: Call mongodb package
 	if err != nil {
-		log.Printf("Error getting unique equipment from MongoDB: %v", err)
+		slog.Error("Error getting unique equipment from MongoDB", "error", err)
 		http.Error(w, "Failed to fetch equipment options: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
@@ -113,7 +113,7 @@ func (api *API) GetMusclesOptionsHandler(w http.ResponseWriter, r *http.Request)
 
 	muscles, err := mongodb.GetUniqueMuscles(api.DB) // UPDATED: Call mongodb package
 	if err != nil {
-		log.Printf("Error getting unique muscles from MongoDB: %v", err)
+		slog.Error("Error getting unique muscles from MongoDB", "error", err)
 		http.Error(w, "Failed to fetch muscle options: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
@@ -136,7 +136,7 @@ func (api *API) GetVersionHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if api.VersionInfo == nil {
-		log.Println("Version information is nil, returning internal server error.")
+		slog.Error("Version information is nil, returning internal server error.")
 		http.Error(w, "Version information not available", http.StatusInternalServerError)
 		return
 	}

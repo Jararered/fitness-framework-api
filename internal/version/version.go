@@ -3,8 +3,8 @@ package version
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
-	"log"
+	"log/slog"
+	"os"
 	"path/filepath"
 
 	"fitness-framework-api/internal/models"
@@ -22,25 +22,22 @@ func LoadVersionInfo() (*models.ApiInfo, error) {
 		return nil, fmt.Errorf("could not get absolute path for %s: %w", VersionFilePath, err)
 	}
 
-	log.Printf("Attempting to load version info from: %s", absPath)
+	slog.Info("Attempting to load version info from", "path", absPath)
 
-	data, err := ioutil.ReadFile(absPath)
+	data, err := os.ReadFile(absPath)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read version file %s: %w", VersionFilePath, err)
 	}
 
-	// *** CRUCIAL CHANGE HERE: Unmarshal into a slice of ApiInfo ***
 	var apiInfos []models.ApiInfo
 	if err := json.Unmarshal(data, &apiInfos); err != nil {
 		return nil, fmt.Errorf("failed to unmarshal version data from %s: %w", VersionFilePath, err)
 	}
 
-	// Check if the slice is empty (e.g., if JSON was "[]")
 	if len(apiInfos) == 0 {
 		return nil, fmt.Errorf("version file %s is empty or contains no API info objects", VersionFilePath)
 	}
 
-	// *** Return the first element of the slice ***
-	log.Printf("Successfully loaded version: %s (buildType: %s)", apiInfos[0].Version, apiInfos[0].BuildType)
+	slog.Info("Successfully loaded version", "version", apiInfos[0].Version, "buildType", apiInfos[0].BuildType)
 	return &apiInfos[0], nil
 }
