@@ -14,8 +14,6 @@ const (
 	VersionFilePath = "./data/version.json"
 )
 
-// LoadVersionInfo reads the version information from the JSON file.
-// It now expects the JSON to be an array and takes the first element.
 func LoadVersionInfo() (*models.ApiInfo, error) {
 	absPath, err := filepath.Abs(VersionFilePath)
 	if err != nil {

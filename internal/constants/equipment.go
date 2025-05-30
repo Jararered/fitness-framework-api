@@ -2,7 +2,6 @@ package constants
 
 import "strings"
 
-// Equipment types as Go constants for type safety and validation
 const (
 	EquipmentBarbell             = "Barbell"
 	EquipmentSquatRack           = "Squat Rack"
@@ -21,11 +20,8 @@ const (
 	EquipmentLegExtensionMachine = "Leg Extension Machine"
 	EquipmentLegPressMachine     = "Leg Press Machine"
 	EquipmentEZBar               = "EZ Bar"
-	// Add any other equipment you use
 )
 
-// AllEquipmentNames provides a slice of all valid equipment names.
-// This is used for validation and for populating the `equipment` database table.
 var AllEquipmentNames = []string{
 	EquipmentBarbell,
 	EquipmentSquatRack,
@@ -46,7 +42,6 @@ var AllEquipmentNames = []string{
 	EquipmentEZBar,
 }
 
-// IsValidEquipment checks if a given string is a valid equipment name (case-insensitive).
 func IsValidEquipment(name string) bool {
 	for _, validName := range AllEquipmentNames {
 		if strings.EqualFold(validName, name) {

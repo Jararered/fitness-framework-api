@@ -19,11 +19,10 @@ import (
 
 const (
 	MongoURI       = "mongodb://localhost:27017"
-	DatabaseName   = "workout_app"
 	CollectionName = "exercises"
 )
 
-func InitDB() (*mongo.Database, error) {
+func InitDB(databaseName string) (*mongo.Database, error) {
 	clientOptions := options.Client().ApplyURI(MongoURI)
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
@@ -43,7 +42,7 @@ func InitDB() (*mongo.Database, error) {
 	}
 
 	slog.Info("MongoDB connection established.")
-	db := client.Database(DatabaseName)
+	db := client.Database(databaseName)
 	collection := db.Collection(CollectionName)
 
 	ctx, cancel = context.WithTimeout(context.Background(), 2*time.Second)

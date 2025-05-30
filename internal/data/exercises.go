@@ -1,12 +1,10 @@
 package data
 
 import (
-	"fitness-framework-api/internal/constants" // Import your constants package
+	"fitness-framework-api/internal/constants"
 	"fitness-framework-api/internal/models"
 )
 
-// AllRawExercises is the canonical, type-safe list of exercises defined directly in Go.
-// You can modify this list directly to add, remove, or change exercises.
 var AllRawExercises = []models.RawExercise{
 	{
 		Name:      "Barbell Bent-Over Row",
@@ -15,7 +13,7 @@ var AllRawExercises = []models.RawExercise{
 	},
 	{
 		Name:      "Barbell Deadlift",
-		Equipment: []string{constants.EquipmentBarbell}, // Assuming Barbell is enough, otherwise add WeightPlates
+		Equipment: []string{constants.EquipmentBarbell},
 		Muscles:   []string{constants.MuscleGroupBack},
 	},
 	{
@@ -358,5 +356,4 @@ var AllRawExercises = []models.RawExercise{
 		Equipment: []string{constants.EquipmentPullupBar},
 		Muscles:   []string{constants.MuscleGroupAbs},
 	},
-	// Add other exercises here, using constants.EquipmentX and constants.MuscleGroupY
 }
