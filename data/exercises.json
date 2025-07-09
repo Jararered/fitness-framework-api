@@ -7,7 +7,7 @@
   {
     "name": "Barbell Deadlift",
     "equipment": ["Barbell"],
-    "muscles": ["Back"]
+    "muscles": ["Legs"]
   },
   {
     "name": "Dumbbell Bent-Over Row",
@@ -66,21 +66,6 @@
   },
   {
     "name": "Seated Cable Row",
-    "equipment": ["Cable Machine"],
-    "muscles": ["Back"]
-  },
-  {
-    "name": "Standing Cable Pullover",
-    "equipment": ["Cable Machine"],
-    "muscles": ["Back"]
-  },
-  {
-    "name": "Cable Face Pull",
-    "equipment": ["Cable Machine"],
-    "muscles": ["Back"]
-  },
-  {
-    "name": "Straight Arm Cable Pulldown",
     "equipment": ["Cable Machine"],
     "muscles": ["Back"]
   },
